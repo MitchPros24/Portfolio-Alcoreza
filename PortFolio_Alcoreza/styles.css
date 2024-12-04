@@ -1,0 +1,260 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: white;
+    background-image: url('bg.webp'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Content Container */
+.content-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
+}
+
+/* Navbar */
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f4a261;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 4em 1em;
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.hero-text {
+    max-width: 60%;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-shadow: 2px 2px 0px #ddd;
+}
+
+.hero h2 {
+    font-size: 1.8em;
+    margin-top: 0.5em;
+    color: #555;
+}
+.hero h1, .hero h2 {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5em;
+    padding: 0.8em 1.5em;
+    color: white;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f4a261;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    border: 3px dashed black;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* About, Skills, and Contact Sections */
+section {
+    padding: 2em 1em;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Comic Sans MS', cursive;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about, .skills, .contact {
+    border-bottom: 2px dashed #aaa;
+}
+
+/* Skills Section */
+.skills ul {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.skills li {
+    list-style: none;
+    background: #f4f4f4;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Projects Section */
+.projects .project-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.projects .project-card {
+    background: white;
+    padding: 1em;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.projects .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #f4a261;
+}
+
+
+.projects .project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+
+/* Contact Section */
+.contact ul {
+    list-style: none;
+    margin-top: 1em;
+}
+
+.contact li {
+    margin-bottom: 0.5em;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    color: #f4a261;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #333;
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+}
+.footer p {
+    transition: color 0.3s ease;
+}
+
+.footer p:hover {
+    color: #f4a261;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        margin: auto;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .projects .project-card {
+        width: 100%;
+    }
+}
